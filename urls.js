@@ -8,5 +8,6 @@ const urls = [
   "https://store.steampowered.com/app/2923300/Banana/",
   "https://store.steampowered.com/app/3335120/Coconut_Simulator/",
   "https://store.steampowered.com/app/3880190/Coconut_Simulator_2/",
-  "https://puginarug.com"
+  "https://puginarug.com",
+  "https://floatingqrcode.com"
 ];
