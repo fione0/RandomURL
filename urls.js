@@ -10,5 +10,6 @@ const urls = [
   "https://store.steampowered.com/app/3880190/Coconut_Simulator_2/",
   "https://puginarug.com",
   "https://floatingqrcode.com",
-  "https://rotatingsandwiches.com"
+  "https://rotatingsandwiches.com",
+  "https://cat-bounce.com"
 ];
