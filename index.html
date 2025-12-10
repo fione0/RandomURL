@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>QR Code Redirect</title>
+    <script src="urls.json></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const randomURL = urls[Math.floor(Math.random() * urls.length)];
+        window.location.replace(randomURL);
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      If you don't get redirected click <button onclick="window.location.replace(urls[Math.floor(Math.random() * urls.length)])">HERE</button>
+    </p>
+  </body>
+</html>
