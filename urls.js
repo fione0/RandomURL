@@ -5,5 +5,7 @@ const urls = [
   "https://youtu.be/9J62hGda9BQ?si=Fj7ykqV5DOW_qnnw",
   "https://cheese.com",
   "https://youtu.be/SXMh8WrXShw?si=VUuXnbfFilikTQ8b",
-  "https://store.steampowered.com/app/2923300/Banana/"
+  "https://store.steampowered.com/app/2923300/Banana/",
+  "https://store.steampowered.com/app/3335120/Coconut_Simulator/",
+  "https://store.steampowered.com/app/3880190/Coconut_Simulator_2/"
 ];
