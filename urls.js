@@ -11,5 +11,6 @@ const urls = [
   "https://puginarug.com",
   "https://floatingqrcode.com",
   "https://rotatingsandwiches.com",
-  "https://cat-bounce.com"
+  "https://cat-bounce.com",
+  "https://youtu.be/CXJJDxg7Mos?si=PoydUt5PWIdggfhv"
 ];
