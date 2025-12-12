@@ -1,1 +1,40 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>QR Code Redirect</title> <script src="urls.js"></script> <script> function redirectRandom() { if (!Array.isArray(urls) || urls.length === 0) { console.error("No URLs found."); return; } const randomURL = urls[Math.floor(Math.random() * urls.length)]; window.location.href = randomURL; // safer for mobile than replace() } // Wait for the full window load to ensure urls.js is fully parsed window.addEventListener("load", () => { // Small delay increases success rates on iOS Safari setTimeout(redirectRandom, 100); }); </script> </head> <body style="font-family: sans-serif;"> <p style="text-align: center; margin-top: 40px; font-size: 18px;"> If you don't get redirected, tap:<br><br> <button onclick="redirectRandom()" style="padding: 12px 20px; font-size: 18px; border-radius: 8px; cursor: pointer;" > HERE </button> </p> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Redirect</title>
+
+  <script src="urls.js"></script>
+
+  <script>
+    // One function that performs the redirect logic
+    function doRedirect() {
+      if (!Array.isArray(urls) || urls.length === 0) {
+        console.error("No URLs found.");
+        return;
+      }
+      const randomURL = urls[Math.floor(Math.random() * urls.length)];
+      window.location.href = randomURL; 
+    }
+
+    // Run redirect when page loads
+    window.addEventListener("load", () => {
+      setTimeout(doRedirect, 100);
+    });
+  </script>
+</head>
+<body style="font-family: sans-serif;">
+
+  <p style="text-align: center; margin-top: 40px; font-size: 18px;">
+    If you don't get redirected, tap:<br><br>
+    <button 
+      onclick="doRedirect()"
+      style="padding: 12px 20px; font-size: 18px; border-radius: 8px; cursor: pointer;"
+    >
+      HERE
+    </button>
+  </p>
+
+</body>
+</html>
