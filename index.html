@@ -17,6 +17,21 @@
         return;
       }
       const randomURL = urls[Math.floor(Math.random() * urls.length)];
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get("src") || "Unknown";
+
+      fetch("https://api.jsonbin.io/v3/b", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-ACCESS-KEY": "$2a$10$.RSzcJHbTfQy.2qkV3YtH.eh88XvpA8Vj7QHmfp7vi0zVlu14ZvfG"
+        },
+        body: JSON.stringify({
+          src: src,
+          target: target_page
+        })
+      });
+      
       window.location.href = randomURL; // safer for mobile than replace()
     }
 
