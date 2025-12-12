@@ -8,21 +8,46 @@
   <script src="urls.js"></script>
 
   <script>
-    // One function that performs the redirect logic
-    function doRedirect() {
+    async function doRedirect() {
+      // Pick random URL
       if (!Array.isArray(urls) || urls.length === 0) {
         console.error("No URLs found.");
         return;
       }
       const randomURL = urls[Math.floor(Math.random() * urls.length)];
-      window.location.href = randomURL; 
+
+      // Get ?src= or use "Unknown"
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get("src") || "Unknown";
+
+      // Send to JSONBin (optional if it fails)
+      try {
+        await fetch("https://api.jsonbin.io/v3/b", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-ACCESS-KEY": "YOUR_ACCESS_KEY_HERE"
+          },
+          body: JSON.stringify({
+            src: src,
+            target: randomURL,
+            ts: Date.now()
+          })
+        });
+      } catch (e) {
+        console.error("JSONBin error:", e);
+      }
+
+      // Redirect user
+      window.location.href = randomURL;
     }
 
-    // Run redirect when page loads
+    // Automatically run on page load
     window.addEventListener("load", () => {
       setTimeout(doRedirect, 100);
     });
   </script>
+
 </head>
 <body style="font-family: sans-serif;">
 
